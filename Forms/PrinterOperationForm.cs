@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PrintProInc.Clasess;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,26 @@ namespace PrintProInc.Forms
         public PrinterOperationForm()
         {
             InitializeComponent();
+        }
+
+        private void Clear()
+        {
+            StatusBB.SelectedIndex = -1;
+        }
+        private void PrinterOperationForm_Load(object sender, EventArgs e)
+        {
+            WorkInOperationPrinter workInOperationPrinter = new WorkInOperationPrinter(dgvPrinterOperation,StatusBB);
+            workInOperationPrinter.load();
+
+        }
+
+       
+
+        private void serchTB_TextChanged(object sender, EventArgs e)
+        {
+            WorkInOperationPrinter workInOperationPrinter = new WorkInOperationPrinter(dgvSearch, StatusBB); ;
+            workInOperationPrinter.search(serchTB.Text);
+
         }
     }
 }

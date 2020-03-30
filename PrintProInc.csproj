@@ -64,6 +64,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clasess\Search.cs" />
     <Compile Include="Clasess\WorkCatrige.cs" />
     <Compile Include="Clasess\WorkCatrigeModel.cs" />
     <Compile Include="Clasess\FirmPrinter.cs" />
@@ -146,6 +147,7 @@
     <Compile Include="Work\ICRUD.cs" />
     <Compile Include="Work\IOperations.cs" />
     <Compile Include="Work\IStatus.cs" />
+    <Compile Include="Work\SqlConect.cs" />
     <EmbeddedResource Include="Forms\CatrigeForm.resx">
       <DependentUpon>CatrigeForm.cs</DependentUpon>
     </EmbeddedResource>
