@@ -2,7 +2,7 @@
 {
     interface IOperations
     {
-        void search();
+        void search(string atribute);
         void count();
         void load();
 
