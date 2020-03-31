@@ -38,6 +38,10 @@
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.serchTB = new MetroFramework.Controls.MetroTextBox();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
+            this.OpID = new MetroFramework.Controls.MetroLabel();
             this.btnSave = new MetroFramework.Controls.MetroButton();
             this.DateDP = new MetroFramework.Controls.MetroDateTime();
             this.StatusCB = new MetroFramework.Controls.MetroComboBox();
@@ -108,6 +112,10 @@
             // 
             // metroPanel1
             // 
+            this.metroPanel1.Controls.Add(this.metroLabel5);
+            this.metroPanel1.Controls.Add(this.metroLabel4);
+            this.metroPanel1.Controls.Add(this.metroLabel3);
+            this.metroPanel1.Controls.Add(this.OpID);
             this.metroPanel1.Controls.Add(this.btnSave);
             this.metroPanel1.Controls.Add(this.DateDP);
             this.metroPanel1.Controls.Add(this.StatusCB);
@@ -119,15 +127,51 @@
             this.metroPanel1.HorizontalScrollbarSize = 10;
             this.metroPanel1.Location = new System.Drawing.Point(412, 63);
             this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(612, 546);
+            this.metroPanel1.Size = new System.Drawing.Size(752, 573);
             this.metroPanel1.TabIndex = 5;
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
             // 
+            // metroLabel5
+            // 
+            this.metroLabel5.AutoSize = true;
+            this.metroLabel5.Location = new System.Drawing.Point(26, 154);
+            this.metroLabel5.Name = "metroLabel5";
+            this.metroLabel5.Size = new System.Drawing.Size(44, 19);
+            this.metroLabel5.TabIndex = 14;
+            this.metroLabel5.Text = "Дата :";
+            // 
+            // metroLabel4
+            // 
+            this.metroLabel4.AutoSize = true;
+            this.metroLabel4.Location = new System.Drawing.Point(26, 113);
+            this.metroLabel4.Name = "metroLabel4";
+            this.metroLabel4.Size = new System.Drawing.Size(50, 19);
+            this.metroLabel4.TabIndex = 13;
+            this.metroLabel4.Text = "Статус:";
+            // 
+            // metroLabel3
+            // 
+            this.metroLabel3.AutoSize = true;
+            this.metroLabel3.Location = new System.Drawing.Point(26, 80);
+            this.metroLabel3.Name = "metroLabel3";
+            this.metroLabel3.Size = new System.Drawing.Size(96, 19);
+            this.metroLabel3.TabIndex = 12;
+            this.metroLabel3.Text = "Индификатор:";
+            // 
+            // OpID
+            // 
+            this.OpID.AutoSize = true;
+            this.OpID.Location = new System.Drawing.Point(192, 22);
+            this.OpID.Name = "OpID";
+            this.OpID.Size = new System.Drawing.Size(16, 19);
+            this.OpID.TabIndex = 11;
+            this.OpID.Text = "0";
+            // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(119, 180);
+            this.btnSave.Location = new System.Drawing.Point(193, 205);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(117, 40);
             this.btnSave.TabIndex = 10;
@@ -137,7 +181,7 @@
             // 
             // DateDP
             // 
-            this.DateDP.Location = new System.Drawing.Point(119, 129);
+            this.DateDP.Location = new System.Drawing.Point(193, 154);
             this.DateDP.MinimumSize = new System.Drawing.Size(0, 29);
             this.DateDP.Name = "DateDP";
             this.DateDP.Size = new System.Drawing.Size(270, 29);
@@ -147,7 +191,7 @@
             // 
             this.StatusCB.FormattingEnabled = true;
             this.StatusCB.ItemHeight = 23;
-            this.StatusCB.Location = new System.Drawing.Point(119, 88);
+            this.StatusCB.Location = new System.Drawing.Point(193, 113);
             this.StatusCB.Name = "StatusCB";
             this.StatusCB.Size = new System.Drawing.Size(270, 29);
             this.StatusCB.TabIndex = 8;
@@ -168,7 +212,7 @@
             this.PrinterIDTB.CustomButton.UseSelectable = true;
             this.PrinterIDTB.CustomButton.Visible = false;
             this.PrinterIDTB.Lines = new string[0];
-            this.PrinterIDTB.Location = new System.Drawing.Point(119, 49);
+            this.PrinterIDTB.Location = new System.Drawing.Point(193, 74);
             this.PrinterIDTB.MaxLength = 32767;
             this.PrinterIDTB.Name = "PrinterIDTB";
             this.PrinterIDTB.PasswordChar = '\0';
@@ -210,7 +254,7 @@
             this.dgvSearch.EnableHeadersVisualStyles = false;
             this.dgvSearch.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.dgvSearch.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dgvSearch.Location = new System.Drawing.Point(38, 226);
+            this.dgvSearch.Location = new System.Drawing.Point(39, 268);
             this.dgvSearch.Name = "dgvSearch";
             this.dgvSearch.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -223,18 +267,18 @@
             this.dgvSearch.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvSearch.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvSearch.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSearch.Size = new System.Drawing.Size(534, 257);
+            this.dgvSearch.Size = new System.Drawing.Size(651, 282);
             this.dgvSearch.TabIndex = 3;
             this.dgvSearch.SelectionChanged += new System.EventHandler(this.dgvSearch_SelectionChanged);
             // 
             // ID
             // 
             this.ID.AutoSize = true;
-            this.ID.Location = new System.Drawing.Point(163, 17);
+            this.ID.Location = new System.Drawing.Point(193, 44);
             this.ID.Name = "ID";
-            this.ID.Size = new System.Drawing.Size(16, 19);
+            this.ID.Size = new System.Drawing.Size(12, 19);
             this.ID.TabIndex = 2;
-            this.ID.Text = "0";
+            this.ID.Text = ".";
             // 
             // dgvPrinterOperation
             // 
@@ -284,7 +328,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1088, 632);
+            this.ClientSize = new System.Drawing.Size(1221, 675);
             this.Controls.Add(this.dgvPrinterOperation);
             this.Controls.Add(this.metroPanel1);
             this.Controls.Add(this.metroPanel2);
@@ -313,5 +357,9 @@
         private MetroFramework.Controls.MetroDateTime DateDP;
         private MetroFramework.Controls.MetroComboBox StatusCB;
         private MetroFramework.Controls.MetroButton btnSave;
+        private MetroFramework.Controls.MetroLabel OpID;
+        private MetroFramework.Controls.MetroLabel metroLabel5;
+        private MetroFramework.Controls.MetroLabel metroLabel4;
+        private MetroFramework.Controls.MetroLabel metroLabel3;
     }
 }

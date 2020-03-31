@@ -64,6 +64,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clasess\PrinterWork.cs" />
     <Compile Include="Clasess\Search.cs" />
     <Compile Include="Clasess\WorkCatrige.cs" />
     <Compile Include="Clasess\WorkCatrigeModel.cs" />
@@ -98,6 +99,12 @@
     <Compile Include="Forms\LocationForm.Designer.cs">
       <DependentUpon>LocationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\PrinterFirmForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +134,18 @@
     </Compile>
     <Compile Include="Forms\PrinterStatusForm.Designer.cs">
       <DependentUpon>PrinterStatusForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\StatusessForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\StatusessForm.Designer.cs">
+      <DependentUpon>StatusessForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\WorkPrinterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\WorkPrinterForm.Designer.cs">
+      <DependentUpon>WorkPrinterForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Catrige.cs" />
     <Compile Include="Models\CatrigeColor.cs" />
@@ -160,6 +179,9 @@
     <EmbeddedResource Include="Forms\LocationForm.resx">
       <DependentUpon>LocationForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\PrinterFirmForm.resx">
       <DependentUpon>PrinterFirmForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -174,6 +196,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\PrinterStatusForm.resx">
       <DependentUpon>PrinterStatusForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StatusessForm.resx">
+      <DependentUpon>StatusessForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WorkPrinterForm.resx">
+      <DependentUpon>WorkPrinterForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

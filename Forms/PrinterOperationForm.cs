@@ -25,9 +25,7 @@ namespace PrintProInc.Forms
         private void PrinterOperationForm_Load(object sender, EventArgs e)
         {
             WorkInOperationPrinter workInOperationPrinter = new WorkInOperationPrinter(dgvSearch,PrinterIDTB, StatusCB, DateDP);
-            workInOperationPrinter.load();
-           
-            
+            workInOperationPrinter.Load();    
         }
 
 
@@ -53,31 +51,40 @@ namespace PrintProInc.Forms
 
             ID.Text = selectedRow.Cells["SerialNamber"].Value.ToString();
             PrinterIDTB.Text = selectedRow.Cells["PrinterID"].Value.ToString();
-            
 
         }
         
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            WorkInOperationPrinter workInOperationPrinter = new WorkInOperationPrinter(dgvPrinterOperation, PrinterIDTB,StatusCB, DateDP);
-            workInOperationPrinter.CreateUpdate();
+
+            PrinterWork printerWork = new PrinterWork(dgvSearch, PrinterIDTB, StatusCB);
+            printerWork.CreateUpdate();
+            printerWork.Load();
+            
+            
+           
         }
 
         private void dgvSearch_SelectionChanged(object sender, EventArgs e)
         {
             DataGridViewRow selectedRow = null;
-
-            if (dgvPrinterOperation.SelectedRows.Count > 0)
+            if (dgvSearch.SelectedRows.Count > 0)
             {
-                selectedRow = dgvPrinterOperation.SelectedRows[0];
+                selectedRow = dgvSearch.SelectedRows[0];
             }
+
             if (selectedRow == null)
 
                 return;
 
-           //tPrinterIDLB.Text = selectedRow.Cells["PrinterID"].Value.ToString();
-           PrinterIDTB.Text = selectedRow.Cells["PrinterID"].Value.ToString();
+            OpID.Text = selectedRow.Cells["PrinterOperationID"].Value.ToString();
+            ID.Text = selectedRow.Cells["PrinterID"].Value.ToString();
+          //t  StatusCB.SelectedIndex = StatusCB.FindStringExact(selectedRow.Cells["PrinterStatusName"].Value.ToString());
+
+
+
+
         }
     }
 }

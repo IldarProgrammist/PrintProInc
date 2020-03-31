@@ -59,5 +59,10 @@ namespace PrintProInc.Forms
             WorkInStatusPrinters workInStatusPrinters = new WorkInStatusPrinters(dgvStatusPrinter, ID.Text, StatusNameTB.Text);
             workInStatusPrinters.delete();
         }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            Clear();
+        }
     }
 }
