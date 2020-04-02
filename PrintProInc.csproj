@@ -65,16 +65,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clasess\PrinterWork.cs" />
-    <Compile Include="Clasess\Search.cs" />
     <Compile Include="Clasess\WorkCatrige.cs" />
     <Compile Include="Clasess\WorkCatrigeModel.cs" />
     <Compile Include="Clasess\FirmPrinter.cs" />
     <Compile Include="Clasess\ModelPrinter.cs" />
     <Compile Include="Clasess\WorkInCatrigeStatus.cs" />
     <Compile Include="Clasess\WorkInLocationPrinter.cs" />
+    <Compile Include="Clasess\WorkInOperationCartrige.cs" />
     <Compile Include="Clasess\WorkInOperationPrinter.cs" />
     <Compile Include="Clasess\WorkInStatusPrinters.cs" />
     <Compile Include="Clasess\WorkPrinter.cs" />
+    <Compile Include="Forms\CartrigeOperationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CartrigeOperationForm.Designer.cs">
+      <DependentUpon>CartrigeOperationForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\CatrigeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -167,6 +173,9 @@
     <Compile Include="Work\IOperations.cs" />
     <Compile Include="Work\IStatus.cs" />
     <Compile Include="Work\SqlConect.cs" />
+    <EmbeddedResource Include="Forms\CartrigeOperationForm.resx">
+      <DependentUpon>CartrigeOperationForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\CatrigeForm.resx">
       <DependentUpon>CatrigeForm.cs</DependentUpon>
     </EmbeddedResource>

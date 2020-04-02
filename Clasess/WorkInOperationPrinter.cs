@@ -13,9 +13,11 @@ namespace PrintProInc.Clasess
         private string ID { get; set; }
         private MetroDateTime Date;
         private MetroTextBox PrinterIDTB { get; set; }
-        public void count()
+        private MetroLabel CountLab { get; set; }
+
+        public WorkInOperationPrinter(MetroLabel countLab)
         {
-            throw new NotImplementedException();
+            CountLab = countLab;
         }
 
         public WorkInOperationPrinter(MetroGrid dgv, MetroTextBox printerIDTB, MetroComboBox statusCB, MetroDateTime date)
@@ -26,6 +28,18 @@ namespace PrintProInc.Clasess
             Date = date;
             
         }
+
+
+
+        public void count()
+        {
+            using (ContextModel db = new ContextModel())
+            {
+                
+            }
+        }
+
+
 
         public void search(string sn)
         {

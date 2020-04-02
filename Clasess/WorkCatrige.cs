@@ -11,11 +11,15 @@ namespace PrintProInc.Clasess
 {
     class WorkCatrige : ICRUD
     {
-
         private string CatrigeID { get; set; }
         private string SerialNamber { get; set; }
         private MetroComboBox CatrigeModelCB { get; set; }
         private MetroGrid Dgv { get; set; }
+
+        public WorkCatrige(MetroGrid dgv)
+        {
+            Dgv = dgv;
+        }
 
 
         public WorkCatrige(MetroGrid dgv, string catrigeID,string sn, MetroComboBox catrigeModel)
@@ -25,6 +29,23 @@ namespace PrintProInc.Clasess
             CatrigeID = catrigeID;
             CatrigeModelCB = catrigeModel;
         }
+
+        public void Load(MetroGrid dgv)
+        {
+            using (ContextModel db = new ContextModel())
+            {
+                var SelectCatrigeAll = from np in db.Catrige
+                                       select new
+                                       {
+                                           np.CatrigeID,
+                                           np.SerialNamber,
+                                           np.CatrigeModel.CatirgeModelName,
+                                           np.CatrigeModel.CatrigeColor.ColorName
+                                       };
+                dgv.DataSource = SelectCatrigeAll.ToList();
+            }
+        }
+
 
 
         public void Load()
@@ -47,9 +68,26 @@ namespace PrintProInc.Clasess
 
                 Dgv.DataSource = SelectCatrigeAll.ToList();
             }
-
         }
 
+
+        public void search(string sn)
+        {
+
+            using (ContextModel db = new ContextModel())
+            {
+                var SearchCarigeSN = from m in db.Catrige.Where(p => p.SerialNamber.Contains(sn))
+                                     select new
+                                     {
+                                         m.CatrigeID,
+                                         m.SerialNamber,
+                                         m.CatrigeModel.CatirgeModelName,
+                                         m.CatrigeModel.CatrigeColor.ColorName,
+                                     };
+
+                Dgv.DataSource = SearchCarigeSN.ToList();
+            }
+        }
 
         public void CreateUpdate()
         {

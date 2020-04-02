@@ -49,6 +49,7 @@ namespace PrintProInc.Clasess
 
 
 
+       
 
         public PrinterWork(MetroGrid dgv, MetroTextBox printerIDTB, MetroComboBox stausCB)
         {

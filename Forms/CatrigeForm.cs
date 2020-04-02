@@ -70,5 +70,10 @@ namespace PrintProInc.Forms
         {
             Clear();
         }
+
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

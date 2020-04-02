@@ -32,15 +32,15 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.deleteBtn = new MetroFramework.Controls.MetroButton();
+            this.Clea = new MetroFramework.Controls.MetroButton();
             this.btnSave = new MetroFramework.Controls.MetroButton();
             this.SerialNumberTB = new MetroFramework.Controls.MetroTextBox();
             this.CatrigeModelCB = new MetroFramework.Controls.MetroComboBox();
             this.ID = new MetroFramework.Controls.MetroLabel();
             this.dgvCatruge = new MetroFramework.Controls.MetroGrid();
-            this.Clea = new MetroFramework.Controls.MetroButton();
-            this.deleteBtn = new MetroFramework.Controls.MetroButton();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCatruge)).BeginInit();
             this.SuspendLayout();
@@ -65,6 +65,44 @@
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
+            // 
+            // metroLabel2
+            // 
+            this.metroLabel2.AutoSize = true;
+            this.metroLabel2.Location = new System.Drawing.Point(35, 92);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(128, 19);
+            this.metroLabel2.TabIndex = 9;
+            this.metroLabel2.Text = "Модель картриджа:";
+            // 
+            // metroLabel1
+            // 
+            this.metroLabel1.AutoSize = true;
+            this.metroLabel1.Location = new System.Drawing.Point(33, 55);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(121, 19);
+            this.metroLabel1.TabIndex = 8;
+            this.metroLabel1.Text = "Серийный номер:";
+            // 
+            // deleteBtn
+            // 
+            this.deleteBtn.Location = new System.Drawing.Point(401, 146);
+            this.deleteBtn.Name = "deleteBtn";
+            this.deleteBtn.Size = new System.Drawing.Size(108, 40);
+            this.deleteBtn.TabIndex = 7;
+            this.deleteBtn.Text = "Удалить";
+            this.deleteBtn.UseSelectable = true;
+            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
+            // 
+            // Clea
+            // 
+            this.Clea.Location = new System.Drawing.Point(287, 146);
+            this.Clea.Name = "Clea";
+            this.Clea.Size = new System.Drawing.Size(108, 40);
+            this.Clea.TabIndex = 6;
+            this.Clea.Text = "Очистить";
+            this.Clea.UseSelectable = true;
+            this.Clea.Click += new System.EventHandler(this.Clea_Click);
             // 
             // btnSave
             // 
@@ -168,44 +206,6 @@
             this.dgvCatruge.Size = new System.Drawing.Size(407, 336);
             this.dgvCatruge.TabIndex = 1;
             this.dgvCatruge.SelectionChanged += new System.EventHandler(this.dgvCatruge_SelectionChanged);
-            // 
-            // Clea
-            // 
-            this.Clea.Location = new System.Drawing.Point(287, 146);
-            this.Clea.Name = "Clea";
-            this.Clea.Size = new System.Drawing.Size(108, 40);
-            this.Clea.TabIndex = 6;
-            this.Clea.Text = "Очистить";
-            this.Clea.UseSelectable = true;
-            this.Clea.Click += new System.EventHandler(this.Clea_Click);
-            // 
-            // deleteBtn
-            // 
-            this.deleteBtn.Location = new System.Drawing.Point(401, 146);
-            this.deleteBtn.Name = "deleteBtn";
-            this.deleteBtn.Size = new System.Drawing.Size(108, 40);
-            this.deleteBtn.TabIndex = 7;
-            this.deleteBtn.Text = "Удалить";
-            this.deleteBtn.UseSelectable = true;
-            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
-            // 
-            // metroLabel1
-            // 
-            this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(33, 55);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(121, 19);
-            this.metroLabel1.TabIndex = 8;
-            this.metroLabel1.Text = "Серийный номер:";
-            // 
-            // metroLabel2
-            // 
-            this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(35, 92);
-            this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(128, 19);
-            this.metroLabel2.TabIndex = 9;
-            this.metroLabel2.Text = "Модель картриджа:";
             // 
             // CatrigeForm
             // 
