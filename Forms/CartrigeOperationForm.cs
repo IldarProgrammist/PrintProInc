@@ -30,7 +30,7 @@ namespace PrintProInc.Forms
         {
           WorkCatrige workCatrige = new WorkCatrige(dgvCariges);
           workCatrige.Load(dgvCariges);
-            WorkInOperationCartrige workInOperationCartrige = new WorkInOperationCartrige(dgvCartrigeOperation, CartrigeStatusCB);
+            WorkInOperationCartrige workInOperationCartrige = new WorkInOperationCartrige(dgvCartrigeOperation, CartrugeID, CartrigeStatusCB);
             workInOperationCartrige.Load();
             Clear();
           
@@ -65,9 +65,10 @@ namespace PrintProInc.Forms
             catrigeForm.Show();
         }
 
-        private void metroButton1_Click(object sender, EventArgs e)
+        private void SaveBtn_Click(object sender, EventArgs e)
         {
-            dgvCariges.Refresh();
+            WorkInOperationCartrige workInOperationCartrige = new WorkInOperationCartrige(dgvCartrigeOperation, CartrugeID,CartrigeStatusCB);
+            workInOperationCartrige.CreateUpdate();
         }
     }
 }

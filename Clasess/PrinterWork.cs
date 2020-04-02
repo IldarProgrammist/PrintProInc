@@ -43,13 +43,7 @@ namespace PrintProInc.Clasess
                 Dgv.DataSource = operations.ToList();
 
             }
-
         }
-
-
-
-
-       
 
         public PrinterWork(MetroGrid dgv, MetroTextBox printerIDTB, MetroComboBox stausCB)
         {
@@ -61,7 +55,6 @@ namespace PrintProInc.Clasess
 
         public void CreateUpdate()
         {
-
             int PrinterOperationID = Convert.ToInt32(ID);
 
             using (ContextModel db = new ContextModel())
@@ -83,12 +76,10 @@ namespace PrintProInc.Clasess
                 else
                 {
                     var mpToUpdate = db.PrinterOperation.SingleOrDefault(pm => pm.PrinterOperationID == PrinterOperationID);
-
                     if (mpToUpdate != null)
                     {
                         mpToUpdate.PrinterID = Convert.ToInt32(PrinterIDTB.Text);
                         mpToUpdate.PrinterStatudID = Convert.ToInt32(StatusCB.SelectedValue);
-
                         mpToUpdate.OperationData = Convert.ToDateTime(DateTime.Now);
                     }
                 }
