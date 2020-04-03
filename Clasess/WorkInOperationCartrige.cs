@@ -2,10 +2,7 @@
 using PrintProInc.Models;
 using PrintProInc.Work;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PrintProInc.Clasess
 {
@@ -39,8 +36,7 @@ namespace PrintProInc.Clasess
                 StatusCB.DisplayMember = "CatrigeStatusName";
 
                 var CartrigeOperation = from np in db.CatrigeOperation
-                                       
-                                       select new
+                                        select new
                                        {
                                            np.CatrigeOperation1,
                                            np.CatrigeID,
@@ -56,8 +52,7 @@ namespace PrintProInc.Clasess
 
         public void CreateUpdate()
         {
-
-            int CartrigeOperationID = Convert.ToInt32(ID);
+           int CartrigeOperationID = Convert.ToInt32(ID);
 
             using (ContextModel db = new ContextModel())
 

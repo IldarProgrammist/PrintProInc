@@ -17,7 +17,7 @@ namespace PrintProInc
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CartrigeOperationForm());
+            Application.Run(new MainForm());
         }
     }
 }

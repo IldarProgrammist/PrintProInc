@@ -82,7 +82,6 @@ namespace PrintProInc.Clasess
                                  select new
                                  {
                                      printerOperation.PrinterOperationID,
-                                     printerOperation = printerOperation.PrinterStatus.PrinterName,
                                      printer.SerialNamber,
                                      printerOperation.OperationData,
                                      printerOperation.PrinterStatus.PrinterName,

@@ -13,34 +13,34 @@ namespace PrintProInc.Clasess
     {
         private string CatrigeID { get; set; }
         private string SerialNamber { get; set; }
-        private MetroComboBox CatrigeModelCB { get; set; }
+        private MetroTextBox CatrigeModelTB { get; set; }
         private MetroGrid Dgv { get; set; }
-
         public WorkCatrige(MetroGrid dgv)
         {
             Dgv = dgv;
         }
 
 
-        public WorkCatrige(MetroGrid dgv, string catrigeID,string sn, MetroComboBox catrigeModel)
+        public WorkCatrige(MetroGrid dgv, string catrigeID, string sn, MetroTextBox catrigeModelTB)
         {
             Dgv = dgv;
             SerialNamber = sn;
             CatrigeID = catrigeID;
-            CatrigeModelCB = catrigeModel;
+            CatrigeModelTB = catrigeModelTB;
         }
 
+
+        //Инфомация о моделях
         public void Load(MetroGrid dgv)
         {
             using (ContextModel db = new ContextModel())
             {
-                var SelectCatrigeAll = from np in db.Catrige
+                var SelectCatrigeAll = from np in db.CatrigeModel
                                        select new
                                        {
-                                           np.CatrigeID,
-                                           np.SerialNamber,
-                                           np.CatrigeModel.CatirgeModelName,
-                                           np.CatrigeModel.CatrigeColor.ColorName
+
+                                           np.CatrigeModelID,
+                                           np.CatirgeModelName,
                                        };
                 dgv.DataSource = SelectCatrigeAll.ToList();
             }
@@ -48,22 +48,20 @@ namespace PrintProInc.Clasess
 
 
 
+        //Полная информация о картридже
         public void Load()
         {
             using (ContextModel db = new ContextModel())
             {
-
-                CatrigeModelCB.DataSource = db.CatrigeModel.ToList();
-                CatrigeModelCB.ValueMember = "CatrigeModelID";
-                CatrigeModelCB.DisplayMember = "CatirgeModelName";
-
 
                 var SelectCatrigeAll = from np in db.Catrige
                                        select new
                                        {
                                            np.CatrigeID,
                                            np.SerialNamber,
-                                           np.CatrigeModel.CatirgeModelName
+                                           np.CatrigeModel.CatirgeModelName,
+                                           np.CatrigeModel.CatrigeColor.ColorName,
+                                           np.CatrigeModelID
                                        };
 
                 Dgv.DataSource = SelectCatrigeAll.ToList();
@@ -83,11 +81,18 @@ namespace PrintProInc.Clasess
                                          m.SerialNamber,
                                          m.CatrigeModel.CatirgeModelName,
                                          m.CatrigeModel.CatrigeColor.ColorName,
-                                     };
 
+                                     };
                 Dgv.DataSource = SearchCarigeSN.ToList();
             }
         }
+
+
+    
+
+
+
+
 
         public void CreateUpdate()
         {
@@ -100,8 +105,7 @@ namespace PrintProInc.Clasess
                     Catrige catrige = new Catrige
                     {
                         SerialNamber = SerialNamber,
-                        CatrigeModelID = Convert.ToInt32(CatrigeModelCB.SelectedValue),
-                        
+                        CatrigeModelID = Convert.ToInt32(CatrigeModelTB.Text)
                     };
                     db.Catrige.Add(catrige);
                 }
@@ -111,33 +115,37 @@ namespace PrintProInc.Clasess
                     if (mpToUpdate != null)
                     {
                         mpToUpdate.SerialNamber = SerialNamber;
-                        mpToUpdate.CatrigeModelID = Convert.ToInt32(CatrigeModelCB.SelectedValue);
-                       
+                        mpToUpdate.CatrigeModelID = Convert.ToInt32(CatrigeModelTB.Text);
+                        //mpToUpdate.CatrigeModelID = Convert.ToInt32(CatrigeModelCB.SelectedValue);
+
                     }
                 }
                 db.SaveChanges();
                 Load();
             }
-
-
-
         }
 
         public void Delete()
         {
-
             int ID = Convert.ToInt32(CatrigeID);
 
+
+
             using (ContextModel db = new ContextModel())
+
             {
+
                 Catrige catrige = db.Catrige
+
                    .Where(p => p.CatrigeID == ID)
+
                    .FirstOrDefault();
+
                 db.Catrige.Remove(catrige);
+
                 db.SaveChanges();
             }
-            Load();
-
         }
+
     }
 }

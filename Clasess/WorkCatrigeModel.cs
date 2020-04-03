@@ -25,6 +25,17 @@ namespace PrintProInc.Clasess
         }
 
 
+
+        public void CartigeModelLoad()
+        {
+
+
+        }
+
+
+
+
+
         public void Load()
         {
 

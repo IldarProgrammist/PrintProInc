@@ -22,45 +22,30 @@ namespace PrintProInc.Forms
         {
             ID.Text = "0";
             SerialNumberTB.Text = string.Empty;
-            CatrigeModelCB.SelectedIndex = -1;
+            //  CatrigeModelCB.SelectedIndex = -1;
+            CartrigeModelTB.Text = string.Empty;
         }
 
         private void CatrigeForm_Load(object sender, EventArgs e)
         {
-            WorkCatrige workCatrige = new WorkCatrige(dgvCatruge, ID.Text, SerialNumberTB.Text, CatrigeModelCB);
+            WorkCatrige workCatrige = new WorkCatrige(dgvCatruge, ID.Text, SerialNumberTB.Text, CartrigeModelTB);
             workCatrige.Load();
+            workCatrige.Load(dgvModelCartige);
             Clear();
-
         }
 
-        private void dgvCatruge_SelectionChanged(object sender, EventArgs e)
-        {
-
-            DataGridViewRow selectedRow = null;
-
-            if (dgvCatruge.SelectedRows.Count > 0)
-            {
-                selectedRow = dgvCatruge.SelectedRows[0];
-            }
-
-            if (selectedRow == null)
-                return;
-            ID.Text = selectedRow.Cells["CatrigeID"].Value.ToString();
-            SerialNumberTB.Text = selectedRow.Cells["SerialNamber"].Value.ToString();
-            CatrigeModelCB.SelectedIndex = CatrigeModelCB.FindStringExact(selectedRow.Cells["CatirgeModelName"].Value.ToString());
-
-        }
+       
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            WorkCatrige workCatrige = new WorkCatrige(dgvCatruge,ID.Text, SerialNumberTB.Text,CatrigeModelCB);
+            WorkCatrige workCatrige = new WorkCatrige(dgvCatruge,ID.Text, SerialNumberTB.Text, CartrigeModelTB);
             workCatrige.CreateUpdate();
             Clear();
         }
 
         private void deleteBtn_Click(object sender, EventArgs e)
         {
-            WorkCatrige workCatrige = new WorkCatrige(dgvCatruge, ID.Text, SerialNumberTB.Text, CatrigeModelCB);
+            WorkCatrige workCatrige = new WorkCatrige(dgvCatruge, ID.Text, SerialNumberTB.Text, CartrigeModelTB);
             workCatrige.Delete();
             Clear();
         }
@@ -71,9 +56,22 @@ namespace PrintProInc.Forms
             Clear();
         }
 
-        private void metroButton1_Click(object sender, EventArgs e)
+        private void dgvModelCartige_SelectionChanged(object sender, EventArgs e)
         {
+            DataGridViewRow selectedRow = null;
+
+            if (dgvModelCartige.SelectedRows.Count > 0)
+            {
+                selectedRow = dgvModelCartige.SelectedRows[0];
+            }
+
+            if (selectedRow == null)
+                return;
             
+            // SerialNumberTB.Text = selectedRow.Cells["SerialNamber"].Value.ToString();
+               CartrigeModelID.Text = selectedRow.Cells["CatrigeModelID"].Value.ToString();
+           // CartrigeModelTB.Text = selectedRow.Cells["CatirgeModelName"].Value.ToString();
+
         }
     }
 }

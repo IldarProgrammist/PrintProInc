@@ -22,6 +22,7 @@ namespace PrintProInc.Forms
 
         private void Clear()
         {
+            OperationID.Visible=false;
             OperationID.Text = "0";
             CartrugeID.Text = string.Empty;
             CartrigeStatusCB.SelectedIndex = -1;
@@ -34,7 +35,6 @@ namespace PrintProInc.Forms
             workInOperationCartrige.Load();
             Clear();
           
-        
         }
 
         private void snTB_TextChanged(object sender, EventArgs e)

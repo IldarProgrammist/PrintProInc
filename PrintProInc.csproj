@@ -64,6 +64,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clasess\CartrigeTest.cs" />
     <Compile Include="Clasess\PrinterWork.cs" />
     <Compile Include="Clasess\WorkCatrige.cs" />
     <Compile Include="Clasess\WorkCatrigeModel.cs" />
@@ -80,6 +81,12 @@
     </Compile>
     <Compile Include="Forms\CartrigeOperationForm.Designer.cs">
       <DependentUpon>CartrigeOperationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CartrigeTestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CartrigeTestForm.Designer.cs">
+      <DependentUpon>CartrigeTestForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\CatrigeForm.cs">
       <SubType>Form</SubType>
@@ -175,6 +182,9 @@
     <Compile Include="Work\SqlConect.cs" />
     <EmbeddedResource Include="Forms\CartrigeOperationForm.resx">
       <DependentUpon>CartrigeOperationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CartrigeTestForm.resx">
+      <DependentUpon>CartrigeTestForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CatrigeForm.resx">
       <DependentUpon>CatrigeForm.cs</DependentUpon>

@@ -1,12 +1,5 @@
 ﻿using PrintProInc.Clasess;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PrintProInc.Forms
@@ -20,12 +13,17 @@ namespace PrintProInc.Forms
 
         private void Clear()
         {
-          
+            ID.Text = string.Empty;
+            StatusCB.SelectedIndex = -1;
+
+
         }
         private void PrinterOperationForm_Load(object sender, EventArgs e)
         {
             WorkInOperationPrinter workInOperationPrinter = new WorkInOperationPrinter(dgvSearch,PrinterIDTB, StatusCB, DateDP);
-            workInOperationPrinter.Load();    
+            workInOperationPrinter.Load();
+            Clear();
+            OpID.Visible = false;
         }
 
 
@@ -61,9 +59,6 @@ namespace PrintProInc.Forms
             PrinterWork printerWork = new PrinterWork(dgvSearch, PrinterIDTB, StatusCB);
             printerWork.CreateUpdate();
             printerWork.Load();
-            
-            
-           
         }
 
         private void dgvSearch_SelectionChanged(object sender, EventArgs e)
