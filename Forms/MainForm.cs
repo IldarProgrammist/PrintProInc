@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PrintProInc.Clasess;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -56,7 +57,7 @@ namespace PrintProInc.Forms
 
         private void metroButton1_Click_1(object sender, EventArgs e)
         {
-            CatrigeForm catrigeForm = new CatrigeForm();
+            CartrigeTestForm catrigeForm = new  CartrigeTestForm();
             catrigeForm.Show();
         }
     }
