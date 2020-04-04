@@ -1,4 +1,5 @@
 ﻿using PrintProInc.Clasess;
+using PrintProInc.Models;
 using System;
 using System.Windows.Forms;
 namespace PrintProInc.Forms
@@ -39,7 +40,7 @@ namespace PrintProInc.Forms
 
             if (selectedRow == null)
                 return;
-            CartrigeModelTB.Text = selectedRow.Cells["CatrigeModelID"].Value.ToString();
+          CartrigeModelTB.Text = selectedRow.Cells["CatrigeModelID"].Value.ToString();
 
         }
 
@@ -57,7 +58,8 @@ namespace PrintProInc.Forms
                 return;
             ID.Text = selectedRow.Cells["CatrigeID"].Value.ToString();
             SnTB.Text= selectedRow.Cells["SerialNamber"].Value.ToString();
-            CartrigeModelTB.Text = selectedRow.Cells["CatrigeModelID"].Value.ToString();
+           // CartrigeModelTB.Text = selectedRow.Cells["CatrigeModelID"].Value.ToString();
+            
         }
 
 
@@ -86,5 +88,13 @@ namespace PrintProInc.Forms
             CartrigeTest cartrigeTest = new CartrigeTest(dgvCartrigeModel);
             cartrigeTest.searchCartrigeModel(searchTB.Text);  
         }
+
+        private void searchCatrigeTB_TextChanged(object sender, EventArgs e)
+        {
+            CartrigeTest cartrigeTest = new CartrigeTest(dgvCatriges);
+            cartrigeTest.searchCatrigeSN(searchCatrigeTB.Text);
+
+        }
+
     }
 }

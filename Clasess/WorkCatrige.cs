@@ -38,7 +38,7 @@ namespace PrintProInc.Clasess
                 var SelectCatrigeAll = from np in db.CatrigeModel
                                        select new
                                        {
-
+                                           
                                            np.CatrigeModelID,
                                            np.CatirgeModelName,
                                        };

@@ -4,8 +4,6 @@ using PrintProInc.Work;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PrintProInc.Clasess
 {
@@ -91,7 +89,6 @@ namespace PrintProInc.Clasess
                 db.SaveChanges();
                 Load();
             }
-
         }
 
 
@@ -109,8 +106,6 @@ namespace PrintProInc.Clasess
                 db.Printer.Remove(printer);
                 db.SaveChanges();
             }
-
-
             Load();
         }
 

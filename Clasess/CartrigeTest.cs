@@ -1,11 +1,7 @@
 ﻿using MetroFramework.Controls;
 using PrintProInc.Models;
-using PrintProInc.Work;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PrintProInc.Clasess
 {
@@ -84,27 +80,6 @@ namespace PrintProInc.Clasess
             }
         }
 
-        public void CatrigeLoad(MetroGrid dgv)
-        {
-
-            using (ContextModel db = new ContextModel())
-            {
-                var catrige = from mp in db.Catrige
-                                   select new
-                                   {
-                                       mp.CatrigeID,
-                                       mp.SerialNamber,
-                                       mp.CatrigeModel.CatirgeModelName,
-                                       mp.CatrigeModel.CatrigeColor.ColorName,
-                                       mp.CatrigeModelID
-                      
-                                   };
-                dgv.DataSource = catrige.ToList();
-
-            }
-
-
-        }
         public void Load()
         {
             using(ContextModel db = new ContextModel())
@@ -121,6 +96,29 @@ namespace PrintProInc.Clasess
             }
         }
 
+
+
+        public void CatrigeLoad(MetroGrid dgv)
+        {
+
+            using (ContextModel db = new ContextModel())
+            {
+                var catrige = from mp in db.Catrige
+                              select new
+                              {
+                                  mp.CatrigeID,
+                                  mp.SerialNamber,
+                                  mp.CatrigeModel.CatirgeModelName,
+                                  mp.CatrigeModel.CatrigeColor.ColorName,
+                                  mp.CatrigeModelID
+
+                              };
+                dgv.DataSource = catrige.ToList();
+
+            }
+        }
+
+
         public void searchCartrigeModel(string catrigeModelName)
         {
 
@@ -135,5 +133,24 @@ namespace PrintProInc.Clasess
                 DgvModel.DataSource = SearchCarigeMN.ToList();
             }
         }
+
+        public void searchCatrigeSN(string catrigeSerialNamber)
+        {
+            using (ContextModel db = new ContextModel())
+            {
+                var SearchCarigeMN = from m in db.Catrige.Where(p => p.SerialNamber.Contains(catrigeSerialNamber))
+                                     select new
+                                     {   
+                                         m.CatrigeID,
+                                         m.SerialNamber,
+                                         m.CatrigeModel.CatirgeModelName,
+                                         m.CatrigeModel.CatrigeColor.ColorName
+                                        
+                                     };
+                DgvModel.DataSource = SearchCarigeMN.ToList();
+            }
+
+        }
+
     }
 }

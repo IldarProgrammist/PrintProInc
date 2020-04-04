@@ -57,8 +57,8 @@ namespace PrintProInc.Forms
 
         private void metroButton1_Click_1(object sender, EventArgs e)
         {
-            CartrigeTestForm catrigeForm = new  CartrigeTestForm();
-            catrigeForm.Show();
+            WorkCatrigeForms workCatrigeForms = new WorkCatrigeForms();
+            workCatrigeForms.Show();
         }
     }
 }

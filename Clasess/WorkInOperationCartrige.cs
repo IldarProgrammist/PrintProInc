@@ -26,7 +26,6 @@ namespace PrintProInc.Clasess
             StatusCB = catrigeModelCB;
         }
 
-
         public void Load()
         {
             using (ContextModel db = new ContextModel())
@@ -47,7 +46,6 @@ namespace PrintProInc.Clasess
                 Dgv.DataSource = CartrigeOperation.ToList();
                
             }
-
         }
 
         public void CreateUpdate()

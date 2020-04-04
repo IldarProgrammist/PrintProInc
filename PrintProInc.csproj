@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clasess\CartrigeTest.cs" />
+    <Compile Include="Clasess\OperationCatrigeTest.cs" />
     <Compile Include="Clasess\PrinterWork.cs" />
     <Compile Include="Clasess\WorkCatrige.cs" />
     <Compile Include="Clasess\WorkCatrigeModel.cs" />
@@ -88,12 +89,6 @@
     <Compile Include="Forms\CartrigeTestForm.Designer.cs">
       <DependentUpon>CartrigeTestForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\CatrigeForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\CatrigeForm.Designer.cs">
-      <DependentUpon>CatrigeForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\CatrigeModelForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +106,12 @@
     </Compile>
     <Compile Include="Forms\LocationForm.Designer.cs">
       <DependentUpon>LocationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\WorkCatrigeForms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\WorkCatrigeForms.Designer.cs">
+      <DependentUpon>WorkCatrigeForms.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
@@ -186,9 +187,6 @@
     <EmbeddedResource Include="Forms\CartrigeTestForm.resx">
       <DependentUpon>CartrigeTestForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\CatrigeForm.resx">
-      <DependentUpon>CatrigeForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\CatrigeModelForm.resx">
       <DependentUpon>CatrigeModelForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -197,6 +195,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LocationForm.resx">
       <DependentUpon>LocationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WorkCatrigeForms.resx">
+      <DependentUpon>WorkCatrigeForms.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

@@ -1,13 +1,6 @@
 ﻿using PrintProInc.Clasess;
 using PrintProInc.Models;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PrintProInc.Forms
@@ -29,46 +22,66 @@ namespace PrintProInc.Forms
         }
         private void CartrigeOperationForm_Load(object sender, EventArgs e)
         {
-          WorkCatrige workCatrige = new WorkCatrige(dgvCariges);
-          workCatrige.Load(dgvCariges);
+    
+            CartrigeTest cartrigeTest = new CartrigeTest(dgvCartrige);
+            cartrigeTest.CatrigeLoad(dgvCartrige);
             WorkInOperationCartrige workInOperationCartrige = new WorkInOperationCartrige(dgvCartrigeOperation, CartrugeID, CartrigeStatusCB);
             workInOperationCartrige.Load();
-            Clear();
-          
-        }
 
-        private void snTB_TextChanged(object sender, EventArgs e)
-        {
-            WorkCatrige workCatrige = new WorkCatrige(dgvCariges);
-            workCatrige.search(snTB.Text);
-        }
+            CartrugeID.Visible = false;
 
-        private void dgvCariges_SelectionChanged(object sender, EventArgs e)
-        {
-            DataGridViewRow selectedRow = null;
+            OperationCatrigeTest operationCatrigeTest = new OperationCatrigeTest();
+            operationCatrigeTest.Load(dgvCartrigeOperation, CartrigeStatusCB);
+            CartrigeStatusCB.SelectedIndex = -1;
 
-            if (dgvCariges.SelectedRows.Count > 0)
-            {
-                selectedRow = dgvCariges.SelectedRows[0];
-            }
-            if (selectedRow == null)
-                return;
-
-            CartrugeID.Text = selectedRow.Cells["CatrigeID"].Value.ToString();
-            //PrinterIDTB.Text = selectedRow.Cells["PrinterID"].Value.ToString();
-
-        }
-
-        private void AddBtn_Click(object sender, EventArgs e)
-        {
-            CatrigeForm catrigeForm = new CatrigeForm();
-            catrigeForm.Show();
         }
 
         private void SaveBtn_Click(object sender, EventArgs e)
         {
             WorkInOperationCartrige workInOperationCartrige = new WorkInOperationCartrige(dgvCartrigeOperation, CartrugeID,CartrigeStatusCB);
             workInOperationCartrige.CreateUpdate();
+        }
+
+        private void dgvCartrige_SelectionChanged(object sender, EventArgs e)
+        {
+
+            DataGridViewRow selectedRow = null;
+
+            if (dgvCartrige.SelectedRows.Count > 0)
+            {
+                selectedRow = dgvCartrige.SelectedRows[0];
+            }
+
+            if (selectedRow == null)
+
+                return;
+            CartrugeID.Text = selectedRow.Cells["CatrigeID"].Value.ToString();
+            SNLab.Text = selectedRow.Cells["SerialNamber"].Value.ToString();
+
+
+        }
+
+        private void dgvCartrigeOperation_SelectionChanged(object sender, EventArgs e)
+        {
+            DataGridViewRow selectedRow = null;
+
+            if (dgvCartrigeOperation.SelectedRows.Count > 0)
+            {
+                selectedRow = dgvCartrigeOperation.SelectedRows[0];
+            }
+
+            if (selectedRow == null)
+
+                return;
+            OperationID.Text = selectedRow.Cells["CatrigeOperation1"].Value.ToString();
+            CartrigeStatusCB.SelectedIndex = CartrigeStatusCB.FindStringExact(selectedRow.Cells["CatrigeStatusName"].Value.ToString());
+            
+        }
+
+        private void snTB_TextChanged(object sender, EventArgs e)
+        {
+            OperationCatrigeTest operationCatrigeTest = new OperationCatrigeTest();
+            operationCatrigeTest.searchCartrigeSN(snTB.Text, dgvCartrige);
         }
     }
 }
