@@ -152,5 +152,22 @@ namespace PrintProInc.Clasess
 
         }
 
+        //Общее колличество картриджей
+        public int CountAll()
+        {
+            using (var db = new ContextModel())
+            {
+                return db.Catrige.Count();
+            }
+        }
+
+        //По модели картриджа
+        public int CountInModel(int catrigeModelID)
+        {
+            using (var db = new ContextModel())
+            {
+                return db.Catrige.Where(c => c.CatrigeModel.CatrigeModelID == catrigeModelID).Count();
+            }
+        }
     }
 }

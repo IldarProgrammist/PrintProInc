@@ -57,6 +57,7 @@ namespace PrintProInc.Forms
             WorkInLocationPrinter workInLocationPrinter = new WorkInLocationPrinter(dgvLocation, RoomTB.Text, TitulCB, ID.Text);
             workInLocationPrinter.CreateUpdate();
             workInLocationPrinter.Load();
+            Clear();
 
         }
 

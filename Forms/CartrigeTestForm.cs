@@ -16,6 +16,7 @@ namespace PrintProInc.Forms
             ID.Text = "0";
             SnTB.Text = string.Empty;
             CartrigeModelTB.Text = string.Empty;
+            WarningLab.Text = "";
         }
 
         private void CartrigeTestForm_Load(object sender, EventArgs e)
@@ -25,7 +26,16 @@ namespace PrintProInc.Forms
             cartrigeTest.Load();
             WorkCatrige workCatrige = new WorkCatrige(dgvCatriges);
             workCatrige.Load();
+            CountForModelTB.Visible = false;
             Clear();
+         
+            //**************************************
+           
+            CatrigeCount.Text = cartrigeTest.CountAll().ToString();
+          // CountModelLab.Text = cartrigeTest.CountInModel(Convert.ToInt32(CountForModelTB.Text)).ToString();
+           
+           //**************************************
+
         }
 
         private void dgvCartrigeModel_SelectionChanged(object sender, EventArgs e)
@@ -41,7 +51,8 @@ namespace PrintProInc.Forms
             if (selectedRow == null)
                 return;
           CartrigeModelTB.Text = selectedRow.Cells["CatrigeModelID"].Value.ToString();
-
+          CountForModelTB.Text = selectedRow.Cells["CatrigeModelID"].Value.ToString();
+          CountCatrigeModelLab.Text = selectedRow.Cells["CatirgeModelName"].Value.ToString();
         }
 
         //Картриджи
@@ -96,5 +107,17 @@ namespace PrintProInc.Forms
 
         }
 
+       
+
+        private void CountForModelTB_TextChanged(object sender, EventArgs e)
+        {
+            CartrigeTest cartrigeTest = new CartrigeTest(dgvCartrigeModel);
+            CountModelLab.Text = cartrigeTest.CountInModel(Convert.ToInt32(CountForModelTB.Text)).ToString();
+
+            if(cartrigeTest.CountInModel(Convert.ToInt32(CountForModelTB.Text)) <5)
+            {
+                WarningLab.Text = "Внимание осталось меньше 5 картриджей";
+            }
+        }
     }
 }

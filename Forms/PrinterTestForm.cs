@@ -23,12 +23,11 @@ namespace PrintProInc.Forms
 
         private void PrinterTestForm_Load(object sender, EventArgs e)
         {
-            //LocationTB.ReadOnly = true;
+            LocationIDTB.Visible = false;
 
+             //MetroLabel printerID, MetroTextBox sn, MetroGrid dgv, MetroComboBox catrigeModelCB, MetroTextBox locarionTB, MetroTextBox locationID
 
-            //MetroLabel printerID, MetroTextBox sn, MetroGrid dgv, MetroComboBox catrigeModelCB, MetroTextBox locarionTB, MetroTextBox locationID
-
-            PrinterTest printerTest = new PrinterTest(ID, SnTB, dgvPrinter, ModelCatrigeCB, LocationIDTB);
+             PrinterTest printerTest = new PrinterTest(ID, SnTB, dgvPrinter, ModelCatrigeCB, LocationIDTB);
            
             WorkInLocationPrinter workInLocationPrinter = new WorkInLocationPrinter();
             workInLocationPrinter.Load(dgvLocation);
@@ -84,5 +83,20 @@ namespace PrintProInc.Forms
             PrinterTest printerTest = new PrinterTest(ID, SnTB, dgvPrinter, ModelCatrigeCB, LocationIDTB);
             printerTest.Delete(); 
         }
+
+        private void searchCatrigeTB_TextChanged(object sender, EventArgs e)
+        {
+            PrinterTest printerTest = new PrinterTest(ID, SnTB, dgvPrinter, ModelCatrigeCB, LocationIDTB);
+            printerTest.searchCartrigeModel(searchCatrigeTB.Text);
+        }
+
+        private void SearchRoomTB_TextChanged(object sender, EventArgs e)
+        {
+            PrinterTest printerTest = new PrinterTest(ID, SnTB, dgvPrinter, ModelCatrigeCB, LocationIDTB);
+            printerTest.searchRoom(SearchRoomTB.Text, dgvLocation);
+            
+        }
+
+       
     }
 }

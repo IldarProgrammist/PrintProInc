@@ -68,6 +68,47 @@ namespace PrintProInc.Clasess
             }
         }
 
+        public void searchCartrigeModel(string catrigeModelName)
+        {
+
+            using (ContextModel db = new ContextModel())
+            {
+                var SearchPrinterSN = from p in db.Printer.Where(p => p.SerialNamber.Contains(catrigeModelName))
+                                     select new
+                                     {
+                                         p.PrinterID,
+                                         p.SerialNamber,
+                                         p.CatrigeModel.CatirgeModelName,
+                                         p.LocationRoom.Titul.TitulName,
+                                         p.LocationRoom.Room,
+                                     };
+                Dgv.DataSource = SearchPrinterSN.ToList();
+            }
+        }
+
+
+
+        public void searchRoom(string catrigeModelName, MetroGrid dgv)
+        {
+            using (ContextModel db = new ContextModel())
+            {
+                var searchRoom = from p in db.LocationRoom.Where(p => p.Room.Contains(catrigeModelName))
+                                      select new
+                                      {
+                                        p.LocationID,
+                                        p.Room,
+                                        p.Titul.TitulName
+                                        
+                                      };
+                dgv.DataSource = searchRoom.ToList();
+            }
+        }
+
+
+
+
+
+
 
         public void Delete()
         {

@@ -25,7 +25,7 @@ namespace PrintProInc.Forms
 
         private void PrintersBtn_Click(object sender, EventArgs e)
         {
-            PrinterForm printerForm = new PrinterForm();
+            PrinterTestForm printerForm = new PrinterTestForm();
             printerForm.Show();
         }
 
