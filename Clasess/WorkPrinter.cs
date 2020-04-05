@@ -36,12 +36,6 @@ namespace PrintProInc.Clasess
                CatrigeModelCB.DisplayMember = "CatirgeModelName";
                CatrigeModelCB.ValueMember = "CatrigeModelID";
 
-                LocarionCB.DataSource = db.LocationRoom.ToList();
-                LocarionCB.DisplayMember = "Room";
-                LocarionCB.ValueMember = "LocationID";
-
-
-
                 var SelectPrinerAll = from p in db.Printer
                                       select new
                                       {
@@ -57,39 +51,62 @@ namespace PrintProInc.Clasess
             }
         }
 
-
         public void CreateUpdate()
         {
-           int ID = Convert.ToInt32(PrinterID);
-
             using (ContextModel db = new ContextModel())
             {
-
+                int ID = Convert.ToInt32(PrinterID);
 
                 if (ID == 0)
                 {
-                    Printer printer = new Printer
+                     Printer printer = new Printer
                     {
-                        SerialNamber = SerialNamber,
-                        CatrigeModelID = Convert.ToInt32(CatrigeModelCB.SelectedValue),
-                        LocarionRoomID = Convert.ToInt32(LocarionCB.SelectedValue)
-                    };
+                       SerialNamber = SerialNamber,
+                       CatrigeModelID = Convert.ToInt32(CatrigeModelCB.SelectedValue)
+                       
+                     };
                     db.Printer.Add(printer);
                 }
                 else
                 {
-                    var mpToUpdate = db.Printer.SingleOrDefault(pm => pm.PrinterID == ID);
+                    var mpToUpdate = db.Catrige.SingleOrDefault(pm => pm.CatrigeID == ID);
                     if (mpToUpdate != null)
                     {
                         mpToUpdate.SerialNamber = SerialNamber;
-                       mpToUpdate.CatrigeModelID = Convert.ToInt32(CatrigeModelCB.SelectedValue);
-                       mpToUpdate.LocarionRoomID = Convert.ToInt32(LocarionCB.SelectedValue);
+                        mpToUpdate.CatrigeModelID = Convert.ToInt32(CatrigeModelCB.SelectedValue);
+
+
+
+                        //mpToUpdate.CatrigeModelID = Convert.ToInt32(CatrigeModelCB.SelectedValue);
+
                     }
                 }
                 db.SaveChanges();
                 Load();
             }
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

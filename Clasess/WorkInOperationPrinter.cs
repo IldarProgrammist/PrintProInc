@@ -41,19 +41,37 @@ namespace PrintProInc.Clasess
 
 
 
-        public void search(string sn)
+        public void SearchLoad(MetroGrid dgv)
         {
 
             using (ContextModel db = new ContextModel())
             {
-                var PrinterAll = from m in db.Printer.Where(p => p.SerialNamber.Contains(sn))
+                var PrinterAll = from m in db.Printer
                                  select new
                                  {
                                      m.PrinterID,
                                      m.SerialNamber,
                                  };
-                Dgv.DataSource = PrinterAll.ToList();
+                dgv.DataSource = PrinterAll.ToList();
+
             }
+        }
+
+
+
+        public void search(string sn)
+            {   
+                using (ContextModel db = new ContextModel())
+                {
+                    var PrinterAll = from m in db.Printer.Where(p => p.SerialNamber.Contains(sn))
+                                     select new
+                                     {
+                                         m.PrinterID,
+                                         m.SerialNamber,
+                                     };
+                    Dgv.DataSource = PrinterAll.ToList();
+               
+                }
         }
 
         public void search()

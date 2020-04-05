@@ -38,7 +38,6 @@ namespace PrintProInc.Clasess
                 var SearchCarigeMN = from m in db.Catrige.Where(p => p.SerialNamber.Contains(catrigeSN))
 
                                      select new
-
                                      {
                                          m.CatrigeID,
                                          m.SerialNamber,

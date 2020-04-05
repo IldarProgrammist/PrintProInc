@@ -40,5 +40,11 @@ namespace PrintProInc.Forms
             CartrigeOperationForm cartrigeOperationForm = new CartrigeOperationForm();
             cartrigeOperationForm.Show();
         }
+
+        private void metroButton2_Click_1(object sender, EventArgs e)
+        {
+            CatrigeStatusForm catrigeStatusForm = new CatrigeStatusForm();
+            catrigeStatusForm.Show();
+        }
     }
 }

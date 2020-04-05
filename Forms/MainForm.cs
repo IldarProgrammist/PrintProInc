@@ -44,8 +44,7 @@ namespace PrintProInc.Forms
 
         private void metroButton4_Click(object sender, EventArgs e)
         {
-            StatusessForm statusessForm = new StatusessForm();
-            statusessForm.Show();
+           
            
         }
 

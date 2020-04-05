@@ -66,6 +66,7 @@
   <ItemGroup>
     <Compile Include="Clasess\CartrigeTest.cs" />
     <Compile Include="Clasess\OperationCatrigeTest.cs" />
+    <Compile Include="Clasess\PrinterTest.cs" />
     <Compile Include="Clasess\PrinterWork.cs" />
     <Compile Include="Clasess\WorkCatrige.cs" />
     <Compile Include="Clasess\WorkCatrigeModel.cs" />
@@ -106,6 +107,12 @@
     </Compile>
     <Compile Include="Forms\LocationForm.Designer.cs">
       <DependentUpon>LocationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PrinterTestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PrinterTestForm.Designer.cs">
+      <DependentUpon>PrinterTestForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\WorkCatrigeForms.cs">
       <SubType>Form</SubType>
@@ -149,12 +156,6 @@
     <Compile Include="Forms\PrinterStatusForm.Designer.cs">
       <DependentUpon>PrinterStatusForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\StatusessForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\StatusessForm.Designer.cs">
-      <DependentUpon>StatusessForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\WorkPrinterForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -196,6 +197,9 @@
     <EmbeddedResource Include="Forms\LocationForm.resx">
       <DependentUpon>LocationForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PrinterTestForm.resx">
+      <DependentUpon>PrinterTestForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\WorkCatrigeForms.resx">
       <DependentUpon>WorkCatrigeForms.cs</DependentUpon>
     </EmbeddedResource>
@@ -216,9 +220,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\PrinterStatusForm.resx">
       <DependentUpon>PrinterStatusForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\StatusessForm.resx">
-      <DependentUpon>StatusessForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\WorkPrinterForm.resx">
       <DependentUpon>WorkPrinterForm.cs</DependentUpon>

@@ -43,8 +43,9 @@
             this.metroButton4.Name = "metroButton4";
             this.metroButton4.Size = new System.Drawing.Size(760, 85);
             this.metroButton4.TabIndex = 9;
-            this.metroButton4.Text = "Стутусы";
+            this.metroButton4.Text = "Стутус";
             this.metroButton4.UseSelectable = true;
+            this.metroButton4.Click += new System.EventHandler(this.metroButton4_Click);
             // 
             // metroButton3
             // 
@@ -55,6 +56,7 @@
             this.metroButton3.TabIndex = 8;
             this.metroButton3.Text = "Локация";
             this.metroButton3.UseSelectable = true;
+            this.metroButton3.Click += new System.EventHandler(this.metroButton3_Click);
             // 
             // metroButton2
             // 
@@ -65,6 +67,7 @@
             this.metroButton2.TabIndex = 7;
             this.metroButton2.Text = "Модели принтеров";
             this.metroButton2.UseSelectable = true;
+            this.metroButton2.Click += new System.EventHandler(this.metroButton2_Click);
             // 
             // metroButton1
             // 
@@ -75,6 +78,7 @@
             this.metroButton1.TabIndex = 6;
             this.metroButton1.Text = "Фирмы принтеров";
             this.metroButton1.UseSelectable = true;
+            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
             // 
             // PrintersBtn
             // 

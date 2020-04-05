@@ -15,10 +15,11 @@ namespace PrintProInc.Forms
 
         private void Clear()
         {
-            OperationID.Visible=false;
             OperationID.Text = "0";
-            CartrugeID.Text = string.Empty;
             CartrigeStatusCB.SelectedIndex = -1;
+            SNLab.Text = "0";
+            
+
         }
         private void CartrigeOperationForm_Load(object sender, EventArgs e)
         {
@@ -33,6 +34,7 @@ namespace PrintProInc.Forms
             OperationCatrigeTest operationCatrigeTest = new OperationCatrigeTest();
             operationCatrigeTest.Load(dgvCartrigeOperation, CartrigeStatusCB);
             CartrigeStatusCB.SelectedIndex = -1;
+            Clear();
 
         }
 
@@ -82,6 +84,11 @@ namespace PrintProInc.Forms
         {
             OperationCatrigeTest operationCatrigeTest = new OperationCatrigeTest();
             operationCatrigeTest.searchCartrigeSN(snTB.Text, dgvCartrige);
+        }
+
+        private void clearBtn_Click(object sender, EventArgs e)
+        {
+          Clear();
         }
     }
 }

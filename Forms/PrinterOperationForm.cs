@@ -13,7 +13,7 @@ namespace PrintProInc.Forms
 
         private void Clear()
         {
-            ID.Text = string.Empty;
+            ID.Text = "0";
             StatusCB.SelectedIndex = -1;
 
 
@@ -21,9 +21,12 @@ namespace PrintProInc.Forms
         private void PrinterOperationForm_Load(object sender, EventArgs e)
         {
             WorkInOperationPrinter workInOperationPrinter = new WorkInOperationPrinter(dgvSearch,PrinterIDTB, StatusCB, DateDP);
+          //  workInOperationPrinter.SearchLoad(dgvSearch);
             workInOperationPrinter.Load();
+
             Clear();
-            OpID.Visible = false;
+           //OpID.Visible = false;
+           PrinterIDTB.Visible = false;
         }
 
 
@@ -47,7 +50,7 @@ namespace PrintProInc.Forms
 
                 return;
 
-            ID.Text = selectedRow.Cells["SerialNamber"].Value.ToString();
+            OpID.Text = selectedRow.Cells["SerialNamber"].Value.ToString();
             PrinterIDTB.Text = selectedRow.Cells["PrinterID"].Value.ToString();
 
         }
@@ -73,13 +76,24 @@ namespace PrintProInc.Forms
 
                 return;
 
-            OpID.Text = selectedRow.Cells["PrinterOperationID"].Value.ToString();
-            ID.Text = selectedRow.Cells["PrinterID"].Value.ToString();
+            ID.Text = selectedRow.Cells["PrinterOperationID"].Value.ToString();
           //t  StatusCB.SelectedIndex = StatusCB.FindStringExact(selectedRow.Cells["PrinterStatusName"].Value.ToString());
 
 
 
 
+        }
+
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            Clear();
+        }
+
+        private void serchTB_TextChanged_1(object sender, EventArgs e)
+        {
+            WorkInOperationPrinter workInOperationPrinter = new WorkInOperationPrinter(dgvPrinterOperation, PrinterIDTB, StatusCB, DateDP);
+            workInOperationPrinter.search(serchTB.Text);
+            
         }
     }
 }

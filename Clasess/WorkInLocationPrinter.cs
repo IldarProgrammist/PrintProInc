@@ -17,6 +17,12 @@ namespace PrintProInc.Clasess
         private string  RoomNumber { get; set; }
         private string ID { get; set; }
 
+        
+        public WorkInLocationPrinter()
+        {
+
+        }
+
         public WorkInLocationPrinter(MetroGrid dgv, string roomNamber, MetroComboBox titulCB, string id)
         {
             ID = id;
@@ -45,6 +51,27 @@ namespace PrintProInc.Clasess
                Dgv.DataSource = location.ToList();
 
             }
+        }
+
+        public void Load(MetroGrid dgv)
+        {
+            using(ContextModel db = new ContextModel())
+            {
+
+                var location = from mp in db.LocationRoom
+                               select new
+                               {
+
+                                   mp.LocationID,
+                                   mp.Room,
+                                   Titul = mp.Titul.TitulName
+                               };
+                dgv.DataSource = location.ToList();
+
+
+
+            }
+
         }
 
         public void CreateUpdate()

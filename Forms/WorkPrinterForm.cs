@@ -28,5 +28,30 @@ namespace PrintProInc.Forms
             PrinterForm printerForm = new PrinterForm();
             printerForm.Show();
         }
+
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            PrinterFirmForm printerFirmForm = new PrinterFirmForm();
+            printerFirmForm.Show();
+        }
+
+        private void metroButton2_Click(object sender, EventArgs e)
+        {
+            PrinterModelForm printerModelForm = new PrinterModelForm();
+            printerModelForm.Show();
+
+        }
+
+        private void metroButton3_Click(object sender, EventArgs e)
+        {
+            LocationForm locationForm = new LocationForm();
+            locationForm.Show();
+        }
+
+        private void metroButton4_Click(object sender, EventArgs e)
+        {
+            PrinterStatusForm printerStatusForm = new PrinterStatusForm();
+            printerStatusForm.Show();
+        }
     }
 }
