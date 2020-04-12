@@ -28,11 +28,15 @@ namespace PrintProInc.Forms
             cartrigeTest.CatrigeLoad(dgvCartrige);
             WorkInOperationCartrige workInOperationCartrige = new WorkInOperationCartrige(dgvCartrigeOperation, CartrugeID, CartrigeStatusCB);
             workInOperationCartrige.Load();
-
             CartrugeID.Visible = false;
 
             OperationCatrigeTest operationCatrigeTest = new OperationCatrigeTest();
             operationCatrigeTest.Load(dgvCartrigeOperation, CartrigeStatusCB);
+
+          // operationCatrigeTest.Load(dgvCartrigeOperation, CartrigeStatusSearchCB);
+            workInOperationCartrige.Count();
+
+            //CartrigeStatusSearchCB.SelectedIndex = -1;
             CartrigeStatusCB.SelectedIndex = -1;
             Clear();
 
@@ -90,5 +94,7 @@ namespace PrintProInc.Forms
         {
           Clear();
         }
+
+        
     }
 }

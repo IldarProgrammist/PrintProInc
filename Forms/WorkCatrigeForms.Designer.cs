@@ -88,7 +88,7 @@
             this.Controls.Add(this.metroButton3);
             this.Controls.Add(this.metroButton1);
             this.Name = "WorkCatrigeForms";
-            this.Text = "Информация";
+            this.Text = "Информация о картриджах";
             this.ResumeLayout(false);
 
         }

@@ -86,6 +86,45 @@ namespace PrintProInc.Clasess
             }
         }
 
+
+        public void searchInStatus(MetroComboBox status )
+        {
+            /*
+            using (ContextModel db = new ContextModel())
+            {
+                var SearchCarigeStatus = from m in db.CatrigeOperation.Where(p => p.CatrigeStatusID.Contains(status.SelectedValue))
+                                     select new
+                                     {
+                                         m.CatrigeModelID,
+                                         m.CatirgeModelName,
+                                     };
+                Dgv.DataSource = SearchCarigeStatus.ToList();
+            }
+            */
+
+
+        }
+
+
+
+
+        public int Count()
+        {
+
+            using (var db = new ContextModel())
+            {
+              
+               
+                
+                
+                // return db.CatrigeOperation.Where(c => c.CatrigeStatus.CatrigeStatusID == status.SelectedIndex).Count();
+            }
+
+            return 0;
+        }
+
+
+
         public void Delete()
         {
             throw new NotImplementedException();

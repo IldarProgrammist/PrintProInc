@@ -62,7 +62,7 @@
             this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.metroButton5);
             this.Name = "MainForm";
-            this.Text = "Main";
+            this.Text = "Главное меню";
             this.ResumeLayout(false);
 
         }

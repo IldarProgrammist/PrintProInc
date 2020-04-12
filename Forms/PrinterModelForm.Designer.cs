@@ -193,7 +193,7 @@
             this.Controls.Add(this.dgvPrinterModel);
             this.Controls.Add(this.metroPanel1);
             this.Name = "PrinterModelForm";
-            this.Text = "PrinterModelForm";
+            this.Text = "Молель принтера";
             this.Load += new System.EventHandler(this.PrinterModelForm_Load);
             this.metroPanel1.ResumeLayout(false);
             this.metroPanel1.PerformLayout();

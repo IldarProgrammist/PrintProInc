@@ -35,6 +35,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
+            this.clearBtn = new MetroFramework.Controls.MetroButton();
+            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.SNLab = new MetroFramework.Controls.MetroLabel();
             this.SaveBtn = new MetroFramework.Controls.MetroButton();
             this.metroDateTime1 = new MetroFramework.Controls.MetroDateTime();
             this.CartrigeStatusCB = new MetroFramework.Controls.MetroComboBox();
@@ -42,11 +46,9 @@
             this.CartrugeID = new MetroFramework.Controls.MetroTextBox();
             this.OperationID = new MetroFramework.Controls.MetroLabel();
             this.dgvCartrige = new MetroFramework.Controls.MetroGrid();
-            this.SNLab = new MetroFramework.Controls.MetroLabel();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.snTB = new MetroFramework.Controls.MetroTextBox();
-            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-            this.clearBtn = new MetroFramework.Controls.MetroButton();
+            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.metroPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCartrigeOperation)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCartrige)).BeginInit();
@@ -54,6 +56,8 @@
             // 
             // metroPanel1
             // 
+            this.metroPanel1.Controls.Add(this.metroLabel4);
+            this.metroPanel1.Controls.Add(this.metroLabel3);
             this.metroPanel1.Controls.Add(this.clearBtn);
             this.metroPanel1.Controls.Add(this.metroLabel2);
             this.metroPanel1.Controls.Add(this.SNLab);
@@ -66,13 +70,50 @@
             this.metroPanel1.HorizontalScrollbarBarColor = true;
             this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel1.HorizontalScrollbarSize = 10;
-            this.metroPanel1.Location = new System.Drawing.Point(643, 34);
+            this.metroPanel1.Location = new System.Drawing.Point(643, 35);
             this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(661, 544);
+            this.metroPanel1.Size = new System.Drawing.Size(661, 631);
             this.metroPanel1.TabIndex = 7;
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
+            // 
+            // metroLabel3
+            // 
+            this.metroLabel3.AutoSize = true;
+            this.metroLabel3.Location = new System.Drawing.Point(42, 94);
+            this.metroLabel3.Name = "metroLabel3";
+            this.metroLabel3.Size = new System.Drawing.Size(56, 19);
+            this.metroLabel3.TabIndex = 17;
+            this.metroLabel3.Text = "Стастус:";
+            // 
+            // clearBtn
+            // 
+            this.clearBtn.Location = new System.Drawing.Point(313, 187);
+            this.clearBtn.Name = "clearBtn";
+            this.clearBtn.Size = new System.Drawing.Size(115, 39);
+            this.clearBtn.TabIndex = 16;
+            this.clearBtn.Text = "Очистить";
+            this.clearBtn.UseSelectable = true;
+            this.clearBtn.Click += new System.EventHandler(this.clearBtn_Click);
+            // 
+            // metroLabel2
+            // 
+            this.metroLabel2.AutoSize = true;
+            this.metroLabel2.Location = new System.Drawing.Point(3, 54);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(121, 19);
+            this.metroLabel2.TabIndex = 15;
+            this.metroLabel2.Text = "Серийный номер:";
+            // 
+            // SNLab
+            // 
+            this.SNLab.AutoSize = true;
+            this.SNLab.Location = new System.Drawing.Point(149, 54);
+            this.SNLab.Name = "SNLab";
+            this.SNLab.Size = new System.Drawing.Size(83, 19);
+            this.SNLab.TabIndex = 14;
+            this.SNLab.Text = "metroLabel2";
             // 
             // SaveBtn
             // 
@@ -129,7 +170,7 @@
             this.dgvCartrigeOperation.EnableHeadersVisualStyles = false;
             this.dgvCartrigeOperation.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.dgvCartrigeOperation.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dgvCartrigeOperation.Location = new System.Drawing.Point(17, 261);
+            this.dgvCartrigeOperation.Location = new System.Drawing.Point(20, 348);
             this.dgvCartrigeOperation.Name = "dgvCartrigeOperation";
             this.dgvCartrigeOperation.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -229,15 +270,6 @@
             this.dgvCartrige.TabIndex = 8;
             this.dgvCartrige.SelectionChanged += new System.EventHandler(this.dgvCartrige_SelectionChanged);
             // 
-            // SNLab
-            // 
-            this.SNLab.AutoSize = true;
-            this.SNLab.Location = new System.Drawing.Point(149, 54);
-            this.SNLab.Name = "SNLab";
-            this.SNLab.Size = new System.Drawing.Size(83, 19);
-            this.SNLab.TabIndex = 14;
-            this.SNLab.Text = "metroLabel2";
-            // 
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
@@ -278,24 +310,14 @@
             this.snTB.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.snTB.TextChanged += new System.EventHandler(this.snTB_TextChanged);
             // 
-            // metroLabel2
+            // metroLabel4
             // 
-            this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(3, 54);
-            this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(121, 19);
-            this.metroLabel2.TabIndex = 15;
-            this.metroLabel2.Text = "Серийный номер:";
-            // 
-            // clearBtn
-            // 
-            this.clearBtn.Location = new System.Drawing.Point(313, 187);
-            this.clearBtn.Name = "clearBtn";
-            this.clearBtn.Size = new System.Drawing.Size(115, 39);
-            this.clearBtn.TabIndex = 16;
-            this.clearBtn.Text = "Очистить";
-            this.clearBtn.UseSelectable = true;
-            this.clearBtn.Click += new System.EventHandler(this.clearBtn_Click);
+            this.metroLabel4.AutoSize = true;
+            this.metroLabel4.Location = new System.Drawing.Point(31, 135);
+            this.metroLabel4.Name = "metroLabel4";
+            this.metroLabel4.Size = new System.Drawing.Size(112, 19);
+            this.metroLabel4.TabIndex = 18;
+            this.metroLabel4.Text = "Дата изменения:";
             // 
             // CartrigeOperationForm
             // 
@@ -307,7 +329,7 @@
             this.Controls.Add(this.dgvCartrige);
             this.Controls.Add(this.metroPanel1);
             this.Name = "CartrigeOperationForm";
-            this.Text = "CartrigeOperationForm";
+            this.Text = "Операции с картриджами";
             this.Load += new System.EventHandler(this.CartrigeOperationForm_Load);
             this.metroPanel1.ResumeLayout(false);
             this.metroPanel1.PerformLayout();
@@ -332,5 +354,7 @@
         private MetroFramework.Controls.MetroTextBox snTB;
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroButton clearBtn;
+        private MetroFramework.Controls.MetroLabel metroLabel3;
+        private MetroFramework.Controls.MetroLabel metroLabel4;
     }
 }

@@ -87,7 +87,7 @@
             this.PrintersBtn.Name = "PrintersBtn";
             this.PrintersBtn.Size = new System.Drawing.Size(760, 85);
             this.PrintersBtn.TabIndex = 5;
-            this.PrintersBtn.Text = "Принтеры";
+            this.PrintersBtn.Text = "Принтер";
             this.PrintersBtn.UseSelectable = true;
             this.PrintersBtn.Click += new System.EventHandler(this.PrintersBtn_Click);
             // 
@@ -114,7 +114,7 @@
             this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.PrintersBtn);
             this.Name = "WorkPrinterForm";
-            this.Text = "Работа с прнтерами";
+            this.Text = "Работа с притерами";
             this.ResumeLayout(false);
 
         }
